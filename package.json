@@ -1,0 +1,23 @@
+{
+  "name": "vue-dnd",
+  "version": "0.1.0",
+  "description": "Vue dragndrop components, no dependencies.",
+  "main": "DragGrid.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/documents-design/dnd-grid-vue.git"
+  },
+  "keywords": [
+    "vue",
+    "drag-n-drop"
+  ],
+  "author": "Lucas Sifoni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/documents-design/dnd-grid-vue/issues"
+  },
+  "homepage": "https://github.com/documents-design/dnd-grid-vue#readme"
+}
