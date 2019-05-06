@@ -33,12 +33,12 @@ export const performSwap = (c: DragGridInterface, dragged: number, target: numbe
   c.copiedItems[dragged] = c.copiedItems[realTarget];
   c.copiedItems[realTarget] = tmp;
   c.$emit('update', c.copiedItems
-      .map(({ uuid, contents }: { uuid: any, contents: any }) => ({ uuid, ...contents })));
+      .map(({ contents }: { contents: any }) => contents));
 };
 
 export const insertPlaceholderAt = (c: DragGridInterface, index: number) => {
   c.copiedItems.splice(index, 0, {
-    uuid: c.copiedItems[index].uuid,
+    _dguuid: c.copiedItems[index]._dguuid,
     contents: {},
     type: ElementType.Shadow,
   });
@@ -106,8 +106,8 @@ const serde = (a: any): any => JSON.parse(JSON.stringify(a));
 
 export const copyItems = (c: DragGridInterface) => {
   c.copiedItems = (c.$props.cloneFunction || serde)(c.$props.items)
-      .map(({ uuid, ...rest }: { uuid: any, contents: any }) =>
-          ({ uuid, type: ElementType.Element, contents: rest }));
+      .map(({ ...rest }, index) =>
+          ({ _dguuid: `u-${index}`, type: ElementType.Element, contents: rest }));
 };
 
 export default {
