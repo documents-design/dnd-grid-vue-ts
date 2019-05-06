@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/documents-design/dnd-grid-vue/issues"
   },
-  "homepage": "https://github.com/documents-design/dnd-grid-vue#readme"
+  "homepage": "https://github.com/documents-design/dnd-grid-vue#readme",
+  "dependencies": {
+    "vue": "^2.6.10",
+    "vue-property-decorator": "^8.1.0"
+  }
 }
