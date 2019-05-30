@@ -28,4 +28,5 @@ export interface DragGridInterface extends Vue {
   targetItem: number | null;
   items: ElementInterface[];
   cloneFunction: <T>(a: T) => T;
+  avoidPerformingSwaps: boolean;
 }

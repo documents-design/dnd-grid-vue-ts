@@ -19,7 +19,9 @@ export const drop = (c: DragGridInterface) => {
       c.targetItem !== c.draggedItem
   ) {
     c.$emit('swap', [c.draggedItem, c.targetItem]);
-    performSwap(c, c.draggedItem, c.targetItem);
+    if (!c.avoidPerformingSwaps) {
+      performSwap(c, c.draggedItem, c.targetItem);
+    }
   } else {
     removeDragHolder(c);
   }
